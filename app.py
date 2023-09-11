@@ -2,4 +2,6 @@ import streamlit as st
 
 
 
-st.caption('ye delete ho gya.')
+code = '''def hello():
+    print("Hello, Streamlit!")'''
+st.code(code, language='python')
