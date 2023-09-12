@@ -1,5 +1,5 @@
 import streamlit as st
 
-e = RuntimeError('This is an exception of type RuntimeError')
-st.exception(e)
+from streamlit.connections import SQLConnection
+conn = st.experimental_connection("my_sql_connection", type=SQLConnection)
 
