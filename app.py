@@ -9,7 +9,10 @@ ff = pd.DataFrame(
 ff = st.data_editor(
     ff,
     column_config={
-    "Chart": st.column_config.LineChartColumn("Chart", help="something"),
+    "Chart": st.column_config.LineChartColumn("Chart", width="medium",
+            help="The sales volume in the last 6 months",
+            y_min=0,
+            y_max=100,),
     
     }
 )
