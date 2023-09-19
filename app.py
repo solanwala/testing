@@ -1,16 +1,14 @@
 import streamlit as st
 
-st.markdown("*Streamlit* is **really** ***cool***.")
-st.markdown('''
-    :red[Streamlit] :orange[can] :green[write] :blue[text] :violet[in]
-    :gray[pretty] :rainbow[colors].''')
-st.markdown("Here's a bouquet &mdash;\
-            :tulip::cherry_blossom::rose::hibiscus::sunflower::blossom:")
+ff = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
 
-multi = '''If you end a line with two spaces,
-a soft return is used for the next line.
+ff = st.data_editor(
+    ff,
+    column_config={
+    "Chart": st.column_config.LineChartColumn(ff)
+    }
+)
 
-Two (or more) newline characters in a row will result in a hard return.
-'''
-st.markdown(multi)
-
+ff
