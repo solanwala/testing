@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 ff = pd.DataFrame(
     np.random.randn(20, 3),
