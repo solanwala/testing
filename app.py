@@ -9,7 +9,8 @@ ff = pd.DataFrame(
 ff = st.data_editor(
     ff,
     column_config={
-    "Chart": st.column_config.LineChartColumn(ff)
+    "Chart": st.column_config.LineChartColumn("Chart", "help": "something"),
+    
     }
 )
 
