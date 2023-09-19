@@ -1,8 +1,7 @@
-import streamlit as st
 import pandas as pd
-import numpy as np
+import streamlit as st
 
-ff = pd.DataFrame(
+data_df = pd.DataFrame(
     {
         "sales": [
             [0, 4, 26, 80, 100, 40],
@@ -10,17 +9,19 @@ ff = pd.DataFrame(
             [10, 20, 80, 80, 70, 0],
             [10, 100, 20, 100, 30, 100],
         ],
-    })
-
-st.data_editor(
-    ff,
-    column_config={
-    "Chart": st.column_config.LineChartColumn("Chart", width="medium",
-            help="The sales volume in the last 6 months",
-            y_min=0,
-            y_max=100,),
-    
     }
 )
 
-ff
+st.data_editor(
+    data_df,
+    column_config={
+        "sales": st.column_config.LineChartColumn(
+            "Sales (last 6 months)",
+            width="medium",
+            help="The sales volume in the last 6 months",
+            y_min=0,
+            y_max=100,
+         ),
+    },
+    hide_index=True,
+)
